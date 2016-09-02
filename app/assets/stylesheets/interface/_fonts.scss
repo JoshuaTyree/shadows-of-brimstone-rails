@@ -1,51 +1,51 @@
 @font-face {
   font-family: 'Rockwell Condensed';
-  src: url("rockwell_condensed.eot");
-  src: url("rockwell-condensed.ttf") format("truetype");
+  src: font-url("rockwell_condensed.eot");
+  src: font-url("rockwell-condensed.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Rockwell Condensed";
-  src: url("rockwell_condensed_bold.eot");
-  src: url("rockwell-condensed-bold.ttf") format("truetype");
+  src: font-url("rockwell_condensed_bold.eot");
+  src: font-url("rockwell-condensed-bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Dust West";
-  src: url("dust_west.otf") format("opentype"),
-       url("dust_west.woff") format("woff");
+  src: font-url("dust_west.otf") format("opentype"),
+       font-url("dust_west.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Berylium";
-  src: url("Berylium.ttf") format("truetype");
+  src: font-url("Berylium.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Berylium";
-  src: url("Beryliumbold.ttf") format("truetype");
+  src: font-url("Beryliumbold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Berylium";
-  src: url("Beryliumbolditalic.ttf") format("truetype");
+  src: font-url("Beryliumbolditalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Berylium";
-  src: url("Beryliumitalic.ttf") format("truetype");
+  src: font-url("Beryliumitalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
@@ -54,9 +54,9 @@
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'codropsicons';
-	src: url('codropsicons.eot');
-	src: url('codropsicons.eot?#iefix') format('embedded-opentype'),
-		   url('codropsicons.woff') format('woff'),
-		   url('codropsicons.ttf') format('truetype'),
-		   url('codropsicons.svg#codropsicons') format('svg');
+	src: font-url('codropsicons.eot');
+	src: font-url('codropsicons.eot?#iefix') format('embedded-opentype'),
+		   font-url('codropsicons.woff') format('woff'),
+		   font-url('codropsicons.ttf') format('truetype'),
+		   font-url('codropsicons.svg#codropsicons') format('svg');
 }
