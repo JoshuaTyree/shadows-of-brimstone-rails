@@ -1,0 +1,24 @@
+.form-container
+  %p Add Ability
+  = simple_form_for @ability, html: { id: 'ability-form' } do |f|
+    = f.hidden_field :player_id
+    .one-column
+      = f.input :name, input_html: { class: 'awesomplete', 'data-list' => '#ability-names'}
+      %ul#ability-names{style: 'display: none'}
+        - Ability.possibilities.each do |a|
+          %li= a
+    = f.input :description
+
+    #stat-mod-fields-2.one-column
+      %label Assign Stat Mods
+      = link_to_add_association f, :stat_mods, 'data-association-insertion-node' => '#stat-mod-fields', 'data-association-insertion-method' => 'append' do
+        %i.fa.fa-plus-square
+        Add Stat Mod
+
+    #stat-mod-fields.one-column
+      = f.simple_fields_for :stat_mods do |sf|
+        = render "stat_mod_fields", f: sf
+
+    .one-column
+      = f.submit
+    -# = f.simple_fields_for :stat_mods do |sf|

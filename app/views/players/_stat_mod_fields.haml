@@ -1,0 +1,21 @@
+.nested-fields
+  = link_to_remove_association f, class: 'close' do
+    %i.fa.fa-close
+
+  .two-column
+    .input.select
+      = f.label :stat_name
+      = f.select :stat_name, @stats, {}, class: 'cs-select cs-skin-elastic'
+
+  .two-column
+    = f.label :amount
+    .input-double-symbols
+      .left-symbol
+        = link_to '#', class: 'minus' do
+          %i.fa.fa-minus
+
+      .right-symbol
+        = link_to '#', class: 'plus' do
+          %i.fa.fa-plus
+
+      = f.input_field :amount, as: :string

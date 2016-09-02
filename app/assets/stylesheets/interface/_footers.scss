@@ -1,0 +1,86 @@
+footer {
+  padding: 4.5em 1em;
+  background-color: $emerald;
+  z-index: 2;
+
+  .footer-container {
+    @include container(110em);
+  }
+
+  .propo-info {
+    @include span(4.5);
+
+    img {
+      max-width: 8.5em;
+    }
+
+    p {
+      @include adjust-font-size-to(12px);
+      color: white;
+    }
+  }
+
+  .footer-links {
+    @include span(5);
+    text-align: right;
+
+    div {
+      margin-left: 10%;
+      display: inline-block;
+      vertical-align: top;
+      text-align: left;
+
+      h5 {
+        color: white;
+      }
+
+      a {
+        @include adjust-font-size-to(12px);
+        color: $light-gray;
+        font-weight: 400;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  .signup-form {
+    @include span(2.5 last);
+
+    h5 {
+      color: white;
+    }
+  }
+
+  @media only screen and (max-width: 1279px) {
+    .propo-info {
+      @include span(12);
+      margin-bottom: 1.5em;
+    }
+
+    .footer-links {
+      @include span(6);
+      text-align: left;
+
+      .company, .account, .get-social {
+        margin: 0 5% 1.5em 0;
+      }
+    }
+
+    .signup-form {
+      @include span(6 last);
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    .footer-links {
+      @include span(12);
+    }
+
+    .signup-form {
+      @include span(12);
+    }
+  }
+}

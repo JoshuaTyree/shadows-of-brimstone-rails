@@ -1,0 +1,23 @@
+%nav.icon-top-bar
+  %ul.icons
+    %li
+      = link_to players_path do
+        %i.fa.fa-users
+        %br
+        All
+    %li
+      = link_to new_player_path do
+        %i.fa.fa-user-plus
+        %br
+        New
+
+.new-player-container
+  .form-container
+    %p Create a new Player
+    = simple_form_for Player.new do |f|
+      .input.select.optional.player_character
+        = f.label :character_id, 'Select character'
+        = f.select :character_id, options_from_collection_for_select(Character.all, :id, :name, f.object.character_id), {}, class: 'cs-select cs-skin-elastic'
+
+      = f.input :name, placeholder: 'Enter player name'
+      = f.submit 'Create'

@@ -1,0 +1,175 @@
+// Colors
+$off-white: #f1f1f1;
+$gray: #ccc;
+$light-blue: #3598dc;
+$light-green: #2ab292;
+$lighter-gray: #f9f9f9;
+$light-gray: #f4f4f4;
+$stroke-gray: #dddddd;
+$medium-gray: #666;
+$dark-gray: #333;
+$dark-blue: #043c51;
+$green: #3FC380;
+$red: #D24D57;
+$yellow: #f1c205;
+$orange: #f08a24;
+
+$propo-blue: #63bbff;
+$dark-propo-blue: #52b3fe;
+$baby-blue: #bce8f8;
+$cloud-blue: #e9eff2;
+$emerald: #7bd3b7;
+$gold: #f9b517;
+$light-gold: #ebca70;
+$purple: #866cb0;
+$salmon: #f67b55;
+$light-salmon: #f4a187;
+
+$clouds: #ecf0f1;
+$greenish: #5b8583;
+$silver: #bdc3c7;
+$midnight-blue: #2c3e50;
+
+// Backgrounds
+$body-background-color: white;
+
+
+// Typography
+$base-font-size: 16px;
+$base-small-font-size: 15px;
+$base-line-height: 24px;
+
+$ms-base: $base-font-size;
+$ms-small-base: $base-small-font-size;
+
+$ms-ratio: $major-third;
+$ms-small-ratio: $major-third;
+
+$ms-up-3: ms(4);
+$ms-up-2: ms(3);
+$ms-up-1: ms(2);
+$ms-up:   ms(1);
+$ms-0: $ms-base;
+$ms-down: ms(-1);
+
+$ms-small-up-3: ms(4, $ms-base, $ms-small-ratio);
+$ms-small-up-2: ms(3, $ms-base, $ms-small-ratio);
+$ms-small-up-1: ms(2, $ms-base, $ms-small-ratio);
+$ms-small-up:   ms(1, $ms-base, $ms-small-ratio);
+$ms-0: $ms-base;
+$ms-small-down:  ms(-1);
+
+$font-family: "Berylium", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-weight: normal;
+$font-color: $dark-gray;
+$header-font-family: "Rockwell Condensed", serif;
+$header-font-weight: bold;
+$header-font-color: $dark-gray;
+
+
+// Buttons
+$button-font-size: rem-calc(12.8);
+$button-font-weight: $font-weight;
+$button-background-color: transparent;
+$button-background-color-hover: $clouds;
+$button-border: 1px solid;
+$button-border-color: $clouds;
+$button-border-color-hover: none;
+$button-color: $clouds;
+$button-color-hover: $greenish;
+$button-vertical-padding: 0.4375rem;
+
+
+// Links
+$link-color: $medium-gray;
+$link-color-hover: scale_color($link-color, $lightness: -20%);
+$link-color-active: $medium-gray;
+
+
+// Forms
+$label-weight: 600;
+$label-color: $clouds;
+$form-color: $greenish;
+$form-background-color: white;
+$form-background-color-focus: white;
+$form-box-shadow: none;
+$form-border-color: white;
+$form-border-color-hover: white;
+$placeholder-text-color: $form-color;
+
+
+// Tables
+$table-header-color: $dark-gray;
+$table-color: $medium-gray;
+$table-odd-background-color: white;
+$table-even-background-color: $light-gray;
+
+
+// Lists
+$list-item-background-color: white;
+$list-item-background-color-odd: scale_color($list-item-background-color, $lightness: -3%);
+
+
+// Borders
+$round-edges: rem-calc(5);
+$border-color: $stroke-gray;
+
+
+// Flashes
+$alert-background-color: $red;
+$alert-border-color: $alert-background-color;
+$success-background-color: $green;
+$success-border-color: $success-background-color;
+$warning-background-color: $orange;
+$warning-border-color: $warning-background-color;
+$close-color: white;
+
+
+// States
+$state-color: white;
+$state-green-background-color: $green;
+$state-yellow-background-color: $yellow;
+$state-red-background-color: $red;
+
+
+// Icons
+$icon-color: $gray;
+$icon-color-hover: scale_color($icon-color, $lightness: -20%);
+
+
+// Navigations
+$use-sidebar: false;
+$use-thin-sidebar: false;
+
+$sidebar-width: rem-calc(50);
+$sidebar-background-color: scale-color($midnight-blue, $lightness: -10%);
+$sidebar-color: white;
+$sidebar-color-hover: scale_color($sidebar-color, $lightness: -20%);
+$sidebar-color-active: scale_color($sidebar-color, $lightness: -30%);
+
+$thin-icon-font-size: rem-calc(21);
+$thin-sidebar-width: rem-calc(80);
+$thin-sidebar-background-color: $dark-blue;
+$thin-sidebar-color: white;
+$thin-sidebar-color-hover: scale_color($thin-sidebar-color, $lightness: -20%);
+$thin-sidebar-color-active: scale_color($thin-sidebar-color, $lightness: -30%);
+
+$topbar-background-color: white;
+$topbar-color: white;
+$topbar-color-hover: scale_color($topbar-color, $lightness: -20%);
+$topbar-color-active: scale_color($thin-sidebar-color, $lightness: -30%);
+
+
+// Plans
+$plan-title-font-size: $ms-up;
+$plan-price-font-size: $ms-up-3;
+$plan-background-color: $dark-blue;
+$plan-title-background-color: $dark-blue;
+$plan-price-background-color: scale_color($plan-background-color, $lightness: 5%);
+$plan-color: white;
+
+
+// Dropdowns
+$dropdown-background-color: $dark-blue;
+$dropdown-color: white;
+$dropdown-color-hover: scale_color($dropdown-color, $lightness: -20%);

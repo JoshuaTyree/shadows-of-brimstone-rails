@@ -1,0 +1,11 @@
+#new-player.form-modal
+  .background
+  .form-container
+    %p Create a new Player
+    = simple_form_for Player.new, remote: true do |f|
+      .input.select.optional.player_character
+        = f.label :character_id, 'Select character'
+        = f.select :character_id, options_from_collection_for_select(Character.all, :id, :name, f.object.character_id), {}, class: 'cs-select cs-skin-elastic'
+
+      = f.input :name, placeholder: 'Enter player name'
+      = f.submit 'Create'

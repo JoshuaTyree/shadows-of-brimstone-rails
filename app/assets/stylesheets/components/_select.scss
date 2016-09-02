@@ -1,0 +1,22 @@
+@import 'cs-select';
+@import 'cs-skin-elastic';
+
+div.cs-select {
+  max-width: 100%;
+  margin: 0.6em 0;
+}
+
+.cs-select span {
+  font-size: 1.5em;
+  font-family: "Rockwell Condensed", serif;
+  padding: 0.6em;
+}
+
+.cs-skin-elastic .cs-options span {
+  font-size: 1em;
+  padding: 0.8em 1em 0.8em 1em;
+}
+
+.cs-select > span::after {
+  right: 0.5em;
+}

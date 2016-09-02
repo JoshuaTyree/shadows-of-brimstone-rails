@@ -1,0 +1,70 @@
+// Buttons
+%button {
+  color: $button-color;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  font-family: 'Lato', sans-serif;
+
+  padding: $button-vertical-padding 3rem;
+  background-color: $button-background-color;
+  border: $button-border $button-border-color;
+  // border-radius: $round-edges;
+  transition: background-color 300ms ease-out, color 300ms ease-out;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+
+  &:hover {
+    color: $button-color-hover;
+    background-color: $button-background-color-hover;
+    // border: $button-border-color-hover;
+  }
+}
+
+.button, input[type="submit"] {
+  @extend %button;
+
+  &.gray-button {
+    color: $medium-gray;
+    border: 1px solid $medium-gray;
+
+    &:hover {
+      background-color: $medium-gray;
+      color: white;
+    }
+  }
+
+  &.purple-filled-button {
+    padding: 0.5625rem 2rem;
+    background-color: $purple;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: scale_color($purple, $lightness: -20%);
+    }
+  }
+
+  &.salmon-filled-button {
+    padding: 0.5625rem 2rem;
+    background-color: $salmon;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: scale_color($salmon, $lightness: -20%);
+    }
+  }
+
+  &.blue-filled-button {
+    padding: 0.5625rem 2rem;
+    background-color: $propo-blue;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: scale_color($propo-blue, $lightness: -20%);
+    }
+  }
+}

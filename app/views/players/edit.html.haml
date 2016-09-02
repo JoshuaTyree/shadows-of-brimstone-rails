@@ -1,0 +1,41 @@
+%nav.icon-top-bar
+  %ul.icons
+    %li
+      = link_to players_path do
+        %i.fa.fa-users
+        %br
+        All
+    %li
+      = link_to new_player_path do
+        %i.fa.fa-user-plus
+        %br
+        New
+    %li
+      = link_to player_path(@player) do
+        %i.fa.fa-user
+        %br
+        Player
+    %li
+      = link_to edit_player_path(@player) do
+        %i.fa.fa-gear
+        %br
+        Edit
+
+    %li
+      = link_to player_path(@player), method: :delete do
+        %i.fa.fa-user-times
+        %br
+        Delete
+
+.player-edit-container
+  -# Add Resources Form
+  = render "form"
+
+  -# Add Stat Mod Form
+  = render "stat_mod_form"
+
+  -# Add Ability Form
+  = render "ability_form"
+
+  -# Add Item Form
+  = render "item_form"

@@ -1,0 +1,142 @@
+%nav.icon-top-bar
+  %ul.icons
+    %li
+      = link_to players_path do
+        %i.fa.fa-users
+        %br
+        All
+    %li
+      = link_to new_player_path do
+        %i.fa.fa-user-plus
+        %br
+        New
+    %li
+      = link_to player_path(@player) do
+        %i.fa.fa-user
+        %br
+        Player
+    %li
+      = link_to edit_player_path(@player) do
+        %i.fa.fa-gear
+        %br
+        Edit
+
+    %li
+      = link_to player_path(@player), method: :delete do
+        %i.fa.fa-user-times
+        %br
+        Delete
+
+.players-show-container
+  .player
+    %ul.stats
+      %li.full
+        %h4= "#{@player.name} - Lv. #{@player.level}"
+        %h5= "Keywords: #{@player.character.keywords.split(',').map{|x| x.capitalize}.join(', ')}"
+    %ul.stats
+      %li.square
+        %p= @player.hp
+        %span.label Health
+      %li.square
+        %p= @player.sanity
+        %span.label Sanity
+
+      %li.rectangle
+        %p= @player.stat_with_bonus :initiative
+        %span Initiative
+
+      %li.small-rect
+        %p= @player.stat_with_bonus :combat
+        %span Combat
+      %li.small-rect
+        %p= @player.stat_with_bonus :max_grit
+        %span Grit
+      %li.small-rect
+        %p= "#{@player.stat_with_bonus :melee_to_hit}+"
+        %span M To-Hit
+      %li.small-rect
+        %p= "#{@player.stat_with_bonus :range_to_hit}+"
+        %span R To-Hit
+
+      %li.small
+        %p= @player.stat_with_bonus :agility
+        %span.label Agi
+      %li.small
+        %p= @player.stat_with_bonus :cunning
+        %span.label Cun
+      %li.small
+        %p= @player.stat_with_bonus :spirit
+        %span.label Spi
+      %li.small
+        %p= @player.stat_with_bonus :strength
+        %span.label Str
+      %li.small
+        %p= @player.stat_with_bonus :lore
+        %span.label Lore
+      %li.small
+        %p= @player.stat_with_bonus :luck
+        %span.label Luck
+
+
+  .labeled-list-box.double-wide
+    %h5 Abilities
+    %ul
+      - @player.abilities.each do |a|
+        %li
+          %p
+            %span{style: 'color: #2980b9'}
+              = "Ability: #{a.name}"
+            %br
+            %br
+            = a.description
+
+  .labeled-list-box.double-wide
+    %h5 Inventory
+    %ul
+      - @player.items.each do |item|
+        %li
+          %p
+            %span{style: 'color: #2980b9'}
+              = "Item: #{item.name}"
+            %br
+            %br
+            = item.description
+
+
+
+  .labeled-list-box.single-wide
+    %h5 Side Bag
+    %ul
+      %li
+        %p
+          Potion
+      %li
+        %p
+          Tequila
+      %li
+        %p
+          Tequila
+      %li
+        %p
+          Tequila
+      %li
+        %p
+          Tequila
+
+
+  .labeled-list-box
+    %h5 Recent Activity
+
+
+  -# .recent-activity
+  -#   %h5 Recent Activity
+  -#   - @player.changes.each do |audit|
+  -#     .activity
+  -#       %ul
+  -#         - if audit[:type] == "create" && audit[:changes].length < 1
+  -#           %li
+  -#             -# = "<span style='color: #2980b9;'>#{@player.name}</span> <span style='color: #2ecc71;'>obtained</span> <span style='color: #1abc9c;'>#{audit[:object].name}</span>".html_safe
+  -#         - else
+  -#           - audit[:changes].each do |k,v|
+  -#             %li
+  -#               = "<span style='color: #2980b9;'>#{k}</span> <span style='color: #{difference_color v}'>#{difference_verb v}</span> <span style='color: #1abc9c;'>#{current_value v}</span>".html_safe

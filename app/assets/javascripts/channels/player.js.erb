@@ -1,0 +1,6 @@
+App.cable.subscriptions.create({ channel: 'PlayerChannel', id: '' }, {
+  received: function(data) {
+    var id = data.id;
+    $('[data-player-id]')
+  }
+})

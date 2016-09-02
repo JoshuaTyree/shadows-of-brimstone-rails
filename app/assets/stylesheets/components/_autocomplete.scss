@@ -1,0 +1,30 @@
+@import 'awesomplete';
+
+
+.awesomplete {
+  // @include span(12);
+  width: 100%;
+}
+
+div.awesomplete > ul:before {
+  display: none;
+}
+
+div.awesomplete > ul {
+  top: 83%;
+  border-radius: 0;
+  background: #1abc9c;
+  border: none;
+}
+
+div.awesomplete > ul > li {
+  color: $clouds;
+  padding: 0.5em;
+  font-size: 1.5em;
+  font-family: "Rockwell Condensed", serif;
+}
+
+div.awesomplete mark {
+  color: $clouds;
+  background: #16a085;
+}

@@ -1,0 +1,33 @@
+.players-index-container {
+  @include container(100%);
+
+  padding: 1em;
+
+  ul {
+    display: block;
+    background-color: scale-color(#2c3e50, $lightness: 10%);
+  }
+
+  li {
+    display: block;
+  }
+
+  a {
+    color: $clouds;
+    font-size: 1.5em;
+
+    padding: 1em;
+    display: block;
+
+    i {
+      color: $clouds;
+      margin-right: 0.5em;
+    }
+
+    &:hover {
+      color: scale-color($clouds, $lightness: -10%);
+      i { color: scale-color($clouds, $lightness: -10%); }
+    }
+  }
+
+}

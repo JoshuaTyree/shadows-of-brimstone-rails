@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %title Shadows of Brimstone
+    = csrf_meta_tags
+
+    %link{href: "https://fonts.googleapis.com/css?family=Lato", rel: "stylesheet"}
+
+    = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => "reload"
+    = javascript_include_tag "application", "data-turbolinks-track" => "reload"
+
+  %body
+    %main{class: 'main', role: 'main'}
+      = render 'navigations/top_bar'
+
+      = yield
+
+      - if flash[:error]
+        :javascript
+          $(document).ready(function() {
+            $.growl.error({ message: '#{flash[:error]}' });
+          });
+      - elsif flash[:notice]
+        :javascript
+          $(document).ready(function() {
+            $.growl.notice({ message: '#{flash[:notice]}' });            
+          });

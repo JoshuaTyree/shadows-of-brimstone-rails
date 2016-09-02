@@ -1,0 +1,155 @@
+.form-container
+  %p Player Stats
+  = simple_form_for @player do |f|
+
+    = f.input :name
+
+    .three-column
+      = f.label :wounds
+      .input-double-symbols
+        .left-symbol
+          = link_to '#', class: 'minus' do
+            %i.fa.fa-minus
+
+        .right-symbol
+          = link_to '#', class: 'plus' do
+            %i.fa.fa-plus
+
+        = f.input_field :wounds, as: :string
+
+    .three-column
+      = f.label :horror_hits, 'Horror Hits'
+      .input-double-symbols
+        .left-symbol
+          = link_to '#', class: 'minus' do
+            %i.fa.fa-minus
+
+        .right-symbol
+          = link_to '#', class: 'plus' do
+            %i.fa.fa-plus
+
+        = f.input_field :horror_wounds, as: :string
+
+    .three-column
+      = f.label :corruption
+      .input-double-symbols
+        .left-symbol
+          = link_to '#', class: 'minus' do
+            %i.fa.fa-minus
+
+        .right-symbol
+          = link_to '#', class: 'plus' do
+            %i.fa.fa-plus
+
+        = f.input_field :corruption, as: :string
+
+    .three-column
+      = f.label :xp, 'XP'
+      .input-double-symbols
+        .left-symbol
+          = link_to '#', class: 'minus' do
+            %i.fa.fa-minus
+
+        .right-symbol
+          = link_to '#', class: 'plus' do
+            %i.fa.fa-plus
+
+        = f.input_field :xp, as: :string
+
+      %label.quick-add Add XP
+      %ul.quick-add
+        %li
+          = link_to '#', class: 'add-xp', 'data-amount' => 5 do
+            %i.fa.fa-plus-square
+            5 XP
+
+        %li
+          = link_to '#', class: 'add-xp', 'data-amount' => 25 do
+            %i.fa.fa-plus-square
+            25 XP
+
+        %li
+          = link_to '#', class: 'add-xp', 'data-amount' => 50 do
+            %i.fa.fa-plus-square
+            50 XP
+
+        %li
+          = link_to '#', class: 'add-xp', 'data-amount' => 100 do
+            %i.fa.fa-plus-square
+            100 XP
+
+    .three-column
+      = f.label :money, 'Gold'
+      .input-double-symbols
+        .left-symbol
+          = link_to '#', class: 'minus' do
+            %i.fa.fa-minus
+
+        .right-symbol
+          = link_to '#', class: 'plus' do
+            %i.fa.fa-plus
+
+        = f.input_field :money, as: :string
+
+      %label.quick-add Add Money
+      %ul.quick-add
+        %li
+          = link_to '#', class: 'add-money', 'data-amount' => 25 do
+            %i.fa.fa-plus-square
+            25 Gold
+
+        %li
+          = link_to '#', class: 'add-money', 'data-amount' => 50 do
+            %i.fa.fa-plus-square
+            50 Gold
+
+        %li
+          = link_to '#', class: 'add-money', 'data-amount' => 75 do
+            %i.fa.fa-plus-square
+            75 Gold
+
+        %li
+          = link_to '#', class: 'add-money', 'data-amount' => 100 do
+            %i.fa.fa-plus-square
+            100 Gold
+
+
+    .three-column
+      = f.label :darkstone
+      .input-double-symbols
+        .left-symbol
+          = link_to '#', class: 'minus' do
+            %i.fa.fa-minus
+
+        .right-symbol
+          = link_to '#', class: 'plus' do
+            %i.fa.fa-plus
+
+        = f.input_field :darkstone, as: :string
+
+      %label.quick-add Add Darkstone
+      %ul.quick-add
+        %li
+          = link_to '#', class: 'add-darkstone', 'data-amount' => 1 do
+            %i.fa.fa-plus-square
+            1 Darkstone
+
+        %li
+          = link_to '#', class: 'add-darkstone', 'data-amount' => 2 do
+            %i.fa.fa-plus-square
+            2 Darkstone
+
+        %li
+          = link_to '#', class: 'add-darkstone', 'data-amount' => 3 do
+            %i.fa.fa-plus-square
+            3 Darkstone
+
+        %li
+          = link_to '#', class: 'add-darkstone', 'data-amount' => 5 do
+            %i.fa.fa-plus-square
+            5 Darkstone
+
+
+
+    .one-column
+      = f.submit

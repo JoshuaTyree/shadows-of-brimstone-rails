@@ -1,0 +1,303 @@
+
+.players-container {
+  @include container(97.5%);
+  margin: 0 auto;
+}
+
+.player {
+
+  margin-top: 3rem;
+  width: rem-calc(800px) + 2rem;
+
+  h4 {
+
+  }
+
+}
+.player-card-container {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  background-color: #f39c12;
+  box-sizing: border-box;
+}
+
+.player-card {
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  width: rem-calc(800px);
+  height: rem-calc(535px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: image-url('character-sheet.png');
+
+  position: relative;
+
+  h4 {
+    left: rem-calc(100px);
+    top: rem-calc(14px);
+    font-size: rem-calc(22px);
+    position: absolute;
+  }
+
+  h5 {
+    left: rem-calc(100px);
+    top: rem-calc(38px);
+    position: absolute;
+  }
+
+  h6 {
+    left: rem-calc(115px);
+    top: rem-calc(57px);
+    position: absolute;
+  }
+
+  ul.abilities {
+    top: rem-calc(224px);
+    right: rem-calc(50px);
+    position: absolute;
+    width: rem-calc(317px);
+    height: rem-calc(150px);
+
+    li {
+      float: left;
+      width: 50%;
+      display: inline-block;
+
+      color: #333;
+      font-size: rem-calc(16px);
+      font-weight: bold;
+      font-family: "Rockwell Condensed";
+    }
+  }
+
+  ul.items {
+    top: rem-calc(224px);
+    left: rem-calc(50px);
+    position: absolute;
+    width: rem-calc(317px);
+    height: rem-calc(150px);
+
+    li {
+      float: left;
+      width: 50%;
+      display: inline-block;
+
+      color: #333;
+      font-size: rem-calc(16px);
+      font-weight: bold;
+      font-family: "Rockwell Condensed";
+    }
+  }
+
+
+  span, p {
+    color: #333;
+    font-size: rem-calc(30px);
+    font-weight: bold;
+    font-family: "Rockwell Condensed";
+    margin: 0;
+    padding: 0;
+    position: absolute;
+
+    &.corruption {
+      right: rem-calc(339px);
+      bottom: rem-calc(123px);
+      font-size: rem-calc(26px);
+    }
+
+    &.sanity {
+      font-size: rem-calc(36px);
+      width: rem-calc(60px);
+      right: rem-calc(130px);
+      bottom: rem-calc(22px);
+      text-align: center;
+    }
+
+    &.health {
+      font-size: rem-calc(36px);
+      width: rem-calc(60px);
+      right: rem-calc(323px);
+      bottom: rem-calc(22px);
+      text-align: center;
+    }
+
+    &.defense {
+      right: rem-calc(238px);
+      bottom: rem-calc(42px);
+      font-size: rem-calc(36px);
+    }
+
+    &.willpower {
+      right: rem-calc(48px);
+      bottom: rem-calc(42px);
+      font-size: rem-calc(36px);
+    }
+
+    &.initiative {
+      top: rem-calc(127px);
+      right: rem-calc(67px);
+    }
+
+    &.agility {
+      left: rem-calc(377px);
+      top: rem-calc(41px);
+    }
+
+    &.cunning {
+      top: rem-calc(41px);
+      right: rem-calc(317px);
+    }
+
+    &.spirit {
+      top: rem-calc(41px);
+      right: rem-calc(222px);
+    }
+
+    &.strength {
+      top: rem-calc(116px);
+      right: rem-calc(363px);
+    }
+
+    &.lore {
+      top: rem-calc(116px);
+      right: rem-calc(270px);
+    }
+
+    &.luck {
+      top: rem-calc(116px);
+      right: rem-calc(177px);
+    }
+
+    &.combat {
+      top: rem-calc(114px);
+      left: rem-calc(120px);
+      font-size: rem-calc(24px);
+      text-align: center;
+    }
+
+    &.grit {
+      top: rem-calc(146px);
+      left: rem-calc(120px);
+      font-size: rem-calc(24px);
+      text-align: center;
+    }
+
+    &.range-to-hit {
+      top: rem-calc(110px);
+      left: rem-calc(172px);
+      width: rem-calc(50px);
+      font-size: rem-calc(45px);
+      text-align: center;
+    }
+
+    &.melee-to-hit {
+      top: rem-calc(110px);
+      left: rem-calc(259px);
+      width: rem-calc(50px);
+      font-size: rem-calc(45px);
+      text-align: center;
+    }
+
+    &.level {
+      bottom: rem-calc(11px);
+      left: rem-calc(133px);
+      width: rem-calc(35px);
+      text-align: center;
+    }
+
+    &.xp {
+      text-align: center;
+      font-size: rem-calc(16px);
+      bottom: rem-calc(70px);
+      left: rem-calc(68px);
+      width: rem-calc(135px);
+    }
+
+    &.money {
+      font-size: rem-calc(16px);
+      bottom: rem-calc(70px);
+      left: rem-calc(266px);
+      width: rem-calc(127px);
+      text-align: center;
+    }
+
+    &.darkstone {
+      left: rem-calc(275px);
+      width: rem-calc(110px);
+      bottom: rem-calc(11px);
+      text-align: center;
+    }
+  }
+
+  .add-exp, .add-gold {
+    font-size: rem-calc(12px);
+    font-family: "Rockwell Condensed";
+
+    &.add-exp {
+      bottom: rem-calc(55px);
+      left: rem-calc(70px);
+      position: absolute;
+    }
+
+    &.add-gold {
+      bottom: rem-calc(55px);
+      left: rem-calc(261px);
+      position: absolute;
+    }
+
+    a {
+      font-size: rem-calc(12px);
+    }
+  }
+
+  .add-darkstone {
+    bottom: rem-calc(21px);
+    left: rem-calc(278px);
+    width: rem-calc(100px);
+    position: absolute;
+
+    a {
+      i {
+        color: black;
+      }
+      &:first-of-type {
+        float: left;
+      }
+
+      &:last-of-type {
+        float: right;
+      }
+    }
+  }
+
+  .level-up {
+    left: rem-calc(160px);
+    bottom: rem-calc(34px);
+    position: absolute;
+
+
+
+    a {
+      font-family: "Rockwell Condensed";
+      color: black;
+
+      i {
+        color: black;
+      }
+
+      &:hover {
+        color: scale-color(black, $lightness: 20%);
+        i {
+          color: scale-color(black, $lightness: 20%);
+        }
+      }
+    }
+  }
+}
+
+
+@import 'players/show';
+@import 'players/new';
+@import 'players/edit';
+@import 'players/index';

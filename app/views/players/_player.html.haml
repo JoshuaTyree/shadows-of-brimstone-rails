@@ -1,0 +1,69 @@
+.player-card{'data-player-id' => player.id}
+  %h4= player.name
+  %h5= player.character.try(:name)
+  %h6= player.character.try(:keywords)
+
+  %p.range-to-hit= "#{player.stat_with_bonus :range_to_hit}+"
+  %p.melee-to-hit= "#{player.stat_with_bonus :melee_to_hit}+"
+  %p.combat= player.stat_with_bonus :combat
+  %p.grit= player.stat_with_bonus :max_grit
+
+  %p.agility= player.stat_with_bonus :agility
+  %p.cunning= player.stat_with_bonus :cunning
+  %p.spirit= player.stat_with_bonus :spirit
+  %p.strength= player.stat_with_bonus :strength
+  %p.lore= player.stat_with_bonus :lore
+  %p.luck= player.stat_with_bonus :luck
+  %p.initiative= player.stat_with_bonus :initiative
+
+  %p.level= player.level
+  %p.xp= player.max_level? ? '--' : player.xp
+  %p.money= player.money
+  %p.darkstone= player.darkstone
+
+  %p.health= player.stat_with_bonus :health
+  %p.sanity= player.stat_with_bonus :sanity
+  %p.defense= "#{player.stat_with_bonus :defense}+"
+  %p.willpower= "#{player.stat_with_bonus :willpower}+"
+  %p.corruption= player.stat_with_bonus :corruption
+
+  - if player.can_level_up?
+    .level-up
+      = link_to player_levelup_path(player), remote: true do
+        %i.fa.fa-plus-circle
+        Level Up
+
+  - if !player.max_level?
+    .add-exp
+      Add XP:
+      = link_to "5", player_add_experience_path(player, amount: 5), remote: true
+      = link_to "10", player_add_experience_path(player, amount: 10), remote: true
+      = link_to "15", player_add_experience_path(player, amount: 15), remote: true
+      = link_to "20", player_add_experience_path(player, amount: 20), remote: true
+      = link_to "25", player_add_experience_path(player, amount: 25), remote: true
+      = link_to "50", player_add_experience_path(player, amount: 50), remote: true
+      = link_to "100", player_add_experience_path(player, amount: 100), remote: true
+
+  .add-gold
+    Add Gold:
+    = link_to "5", player_add_money_path(player, amount: 5), remote: true
+    = link_to "10", player_add_money_path(player, amount: 10), remote: true
+    = link_to "15", player_add_money_path(player, amount: 15), remote: true
+    = link_to "20", player_add_money_path(player, amount: 20), remote: true
+    = link_to "25", player_add_money_path(player, amount: 25), remote: true
+    = link_to "50", player_add_money_path(player, amount: 50), remote: true
+    = link_to "100", player_add_money_path(player, amount: 100), remote: true
+
+  .add-darkstone
+    = link_to player_add_darkstone_path(player, amount: -1), remote: true do
+      %i.fa.fa-minus
+    = link_to player_add_darkstone_path(player, amount: 1), remote: true do
+      %i.fa.fa-plus
+
+  %ul.abilities
+    - player.abilities.each do |a|
+      %li= a.name
+
+  %ul.items
+    - player.items.each do |i|
+      %li= i.name

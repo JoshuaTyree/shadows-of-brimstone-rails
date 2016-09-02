@@ -1,0 +1,236 @@
+.players-show-container {
+  @include container(100%);
+  padding: 1.5em;
+
+  // h4 {
+  //   font-size: 4em;
+  //   color: $clouds;
+  //   // padding-left: 1em;
+  //   margin-left: 10px;
+  //   margin-top: 0.5em;
+  // }
+  //
+  // h5 {
+  //   color: $clouds;
+  //   margin-top: 0.5em;
+  //   margin-left: 10px;
+  // }
+
+  .player {
+    @include span(12);
+
+    margin: 0;
+
+    ul.stats {
+      li {
+        margin-top: 0.75em;
+        background-color: scale-color($midnight-blue, $lightness: 10%);
+        position: relative;
+        text-align: center;
+
+        p, span {
+          color: $clouds;
+          font-family: "Rockwell Condensed", serif;
+        }
+
+        span {
+          font-size: 2em;
+
+          top: 0.5em;
+          left: 0.5em;
+          position: absolute;
+        }
+
+        h4, h5 {
+          color: $clouds;
+        }
+
+        h5 {
+          font-size: 1.5em;
+          margin: 20px 0;
+        }
+
+        h4 {
+          font-size: 4em;
+          margin-top: 20px;
+        }
+
+
+        &.full {
+          @include span(12);
+          background-color: #16a085;
+        }
+
+        &.rectangle {
+          @include span(8);
+
+          background-color: #2980b9;
+
+          p {
+            font-size: 14em;
+            margin: 5rem 0;
+          }
+        }
+
+        &.small-rect {
+          @include span(4 last);
+          background-color: #27ae60;
+
+          p {
+            font-size: 2.85em;
+          }
+
+          span {
+            font-size: 1.5em;
+          }
+        }
+
+        &.square {
+          @include span(6);
+          background-color: #e67e22;
+
+
+          &:nth-of-type(even) {
+            @include span(6 last);
+
+            background-color: #c0392b;
+          }
+
+          p {
+            font-size: 8em;
+          }
+        }
+
+
+        &.small {
+          @include span(4);
+          background-color: #8e44ad;
+
+          &:nth-of-type(even) {
+            background-color: #f39c12;
+          }
+
+          &:nth-of-type(3n + 1) {
+            @include span(4 last);
+          }
+
+          p {
+            font-size: 6em;
+          }
+        }
+      }
+    }
+  }
+
+  .labeled-list-box {
+    @include span(12);
+
+    margin-top: 1.5em;
+    background-color: scale-color(#2c3e50, $lightness: 10%);
+
+    h5 {
+      color: #ecf0f1;
+      font-size: 1em;
+      font-family: "Rockwell Condensed";
+      padding: 1em;
+      background-color: scale-color(#2c3e50, $lightness: 20%);
+    }
+
+    ul {
+      display: block;
+    }
+
+
+    li {
+      margin: 1em;
+      padding: 1em;
+      display: block;
+      box-sizing: border-box;
+      background-color: #34495e;
+    }
+
+    p {
+      color: #ecf0f1;
+      font-size: 1em;
+      font-family: "Rockwell Condensed";
+
+      margin: 0;
+      padding: 0;
+    }
+
+    &.double-wide {
+      li {
+        @include span(6 split);
+
+        // margin: 1em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 1em;
+        display: block;
+        background-color: #34495e;
+        box-sizing: border-box;
+      }
+    }
+
+    &.single-wide {
+      li {
+        @include span(1 of 5 split);
+
+        // margin: 1em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        padding: 1em;
+        display: block;
+        background-color: #34495e;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .recent-activity {
+    @include span(12);
+    margin-top: 1.5em;
+    background-color: scale-color(#2c3e50, $lightness: 10%);
+
+    .activity {
+      padding: 1em;
+      margin: 1em;
+      background-color: #34495e;
+    }
+
+    h5 {
+      color: #ecf0f1;
+      font-size: rem-calc(12px);
+      font-family: 'Lato', sans-serif;
+      padding: 1em;
+      background-color: scale-color(#2c3e50, $lightness: 20%);
+    }
+
+    p {
+      color: #ecf0f1;
+      font-family: 'Lato', sans-serif;
+      padding: 1.5em;
+      margin: 0;
+
+      .actor {
+        color: #3498db;
+      }
+
+      .stat {
+        color: #e67e22;
+      }
+
+      .original {
+        color: #e74c3c;
+      }
+
+      .new {
+        color: #27ae60;
+      }
+
+      .when {
+        color: #1abc9c;
+      }
+    }
+  }
+}

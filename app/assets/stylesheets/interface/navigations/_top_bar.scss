@@ -1,0 +1,36 @@
+nav.icon-top-bar {
+  background-color: scale-color($midnight-blue, $lightness: 10%);
+
+
+  ul.icons {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    li {
+      margin-right: -8px;
+      display: inline-block;
+      // background-color: scale-color($midnight-blue, $lightness: 5%);
+
+      &:hover {
+        background-color: scale-color($midnight-blue, $lightness: -30%);
+
+        i {
+          color: #a3a3a3;
+        }
+      }
+
+      i {
+        font-size: 3em;
+      }
+
+      a {
+        color: $clouds;
+        font-size: 1em;
+        font-family: "Rockwell Condensed", serif;
+        padding: 2em 3em;
+        display: block;
+      }
+    }
+  }
+}

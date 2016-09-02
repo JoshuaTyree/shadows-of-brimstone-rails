@@ -1,0 +1,13 @@
+var playerId = "<%= @player.id %>";
+var selector = ".player-card[data-player-id='" + playerId + "']";
+var html = "<%= escape_javascript(render partial: 'player', locals: { player: @player }) %>";
+
+console.log("Looking for ", selector, $(selector));
+
+if ($(selector).length < 1) {
+  console.log("Card doesn't exist, adding it in");
+  $('.players-container').append(html);
+} else {
+  console.log("Replacing card");
+  $(selector).replaceWith(html);
+}
