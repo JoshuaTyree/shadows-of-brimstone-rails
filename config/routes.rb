@@ -3,15 +3,9 @@ Rails.application.routes.draw do
   resources :stat_mods
   resources :abilities
   resources :items
+  resources :side_bag_items
 
   resources :players do
-    get :add_experience, to: "players#add_experience"
-    get :add_money, to: "players#add_money"
-    get :add_wound, to: "players#add_wound"
-    get :add_horror, to: "players#add_horror"
-    get :heal, to: "players#heal"
-    get :heal_horror, to: "players#heal_horror"
-    get :add_darkstone, to: "players#add_darkstone"
     get :levelup, to: "players#levelup"
 
     collection do

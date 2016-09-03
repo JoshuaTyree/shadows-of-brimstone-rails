@@ -199,4 +199,9 @@ $(document).on('turbolinks:load', function() {
     });
   });
 
+  $("a.destroy").on("ajax:success", function(e, data, status, xhr) {
+    $(this).parent().remove();
+  });
+
+
 });

@@ -2,12 +2,18 @@ class StatModsController < ApplicationController
 
   def create
     @stat_mod = StatMod.new mod_params
-    puts mod_params
     @player = Player.find mod_params[:modifiable_id]
+
+    if mod_params[:amount].to_i == 0
+      flash[:error] = "0 is an invalid stat mod"
+      redirect_to(edit_player_path(@player, anchor: 'stat-mod-form')) and return
+    end
+
     if @stat_mod.save
-      redirect_to edit_player_path(@player), notice: "Stat Mod added!"
+      redirect_to edit_player_path(@player, anchor: 'stat-mod-form'), notice: "Stat Mod added!"
     else
-      redurect_to edit_player_path(@player), error: "Failed to add Stat Mod"
+      flash[:error] = "Failed to add Stat Mod"
+      redirect_to edit_player_path(@player, anchor: 'stat-mod-form')
     end
   end
 

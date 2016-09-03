@@ -33,6 +33,16 @@
       %li.full
         %h4= "#{@player.name} - Lv. #{@player.level}"
         %h5= "Keywords: #{@player.character.keywords.split(',').map{|x| x.capitalize}.join(', ')}"
+      %li.small
+        %p= @player.xp
+        %span XP
+      %li.small
+        %p= "#{@player.money}g"
+        %span Gold
+      %li.small
+        %p= @player.darkstone
+        %span Stone
+
     %ul.stats
       %li.square
         %p= @player.hp
@@ -84,7 +94,7 @@
       - @player.abilities.each do |a|
         %li
           %p
-            %span{style: 'color: #2980b9'}
+            %span{style: 'color: #1abc9c'}
               = "Ability: #{a.name}"
             %br
             %br
@@ -95,38 +105,33 @@
     %ul
       - @player.items.each do |item|
         %li
+          = link_to item, method: :delete, remote: true, class: 'destroy tooltip', title: 'Remove item' do
+            %i.fa.fa-times-circle
+
           %p
-            %span{style: 'color: #2980b9'}
+            %span{style: 'color: #1abc9c'}
               = "Item: #{item.name}"
             %br
             %br
             = item.description
 
 
-
   .labeled-list-box.single-wide
     %h5 Side Bag
     %ul
-      %li
-        %p
-          Potion
-      %li
-        %p
-          Tequila
-      %li
-        %p
-          Tequila
-      %li
-        %p
-          Tequila
-      %li
-        %p
-          Tequila
+      - @player.side_bag_items.each do |item|
+        %li
+          %p= item.name
+          = link_to item, method: :delete, remote: true, class: 'destroy tooltip', title: 'Remove from Side Bag' do
+            %i.fa.fa-times-circle
 
 
   .labeled-list-box
     %h5 Recent Activity
-
+    %ul
+      - @player.changes.each do |audit|
+        = format_audit audit do
+          %span.time= audit[:when].strftime '%m/%d/%y %l:%M %P'
 
   -# .recent-activity
   -#   %h5 Recent Activity

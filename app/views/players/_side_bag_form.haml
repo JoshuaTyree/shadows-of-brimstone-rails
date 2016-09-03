@@ -1,0 +1,11 @@
+#side-bag-form.form-container
+  %p Add Side Bag Item
+  = simple_form_for @side_bag_item do |f|
+    = f.hidden_field :player_id
+
+    .input.select
+      = f.label :name
+      = f.select :name, SideBagItem.possibilities, {}, class: 'cs-select cs-skin-elastic'
+
+    .one-column
+      = f.submit

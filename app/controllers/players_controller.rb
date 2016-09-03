@@ -30,6 +30,7 @@ class PlayersController < ApplicationController
     @item = @player.items.new
     @item.stat_mods.build
     @stat_mod = StatMod.new(modifiable: @player, amount: 0)
+    @side_bag_item = SideBagItem.new(player: @player)
     @stats = [
       ["Combat", "combat"],
       ["Max Grit", "max_grit"],
@@ -62,6 +63,34 @@ class PlayersController < ApplicationController
   def destroy
     @player.destroy
     redirect_to players_path
+  end
+
+
+  def create_sidebag_item
+    @side_bag_item = SideBagItem.new(sidebag_params)
+    @player = Player.find params[:player_id]
+
+    if @player.stat_with_bonus(:side_bag_slots) <= @player.side_bag_items.count
+      render :edit, error: "Player's Side Bag is full."
+    else
+      if @side_bag_item.save
+        flash[:notice] = "Item added to side bag"
+      else
+        flash[:error] = "Failed to add item to side bag."
+      end
+
+      render :edit
+    end
+  end
+
+
+  def create_ability
+  end
+
+  def create_item
+  end
+
+  def create_stat_mod
   end
 
 
@@ -156,6 +185,13 @@ class PlayersController < ApplicationController
       :xp,
       :money,
       :darkstone
+    )
+  end
+
+  def sidebag_params
+    params.require(:side_bag_item).permit(
+      :player_id,
+      :name 
     )
   end
 

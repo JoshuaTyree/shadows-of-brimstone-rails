@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902152013) do
+ActiveRecord::Schema.define(version: 20160903203744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,10 +63,11 @@ ActiveRecord::Schema.define(version: 20160902152013) do
     t.integer  "lore"
     t.integer  "luck"
     t.integer  "initiative"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "keywords"
-    t.integer  "corruption",   default: 0
+    t.integer  "corruption",     default: 0
+    t.integer  "side_bag_slots", default: 5
   end
 
   create_table "items", force: :cascade do |t|
@@ -96,6 +97,14 @@ ActiveRecord::Schema.define(version: 20160902152013) do
     t.index ["starting_ability_id"], name: "index_players_on_starting_ability_id", using: :btree
   end
 
+  create_table "side_bag_items", force: :cascade do |t|
+    t.integer  "player_id"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_side_bag_items_on_player_id", using: :btree
+  end
+
   create_table "stat_mods", force: :cascade do |t|
     t.string   "stat_name"
     t.integer  "amount"
@@ -106,4 +115,5 @@ ActiveRecord::Schema.define(version: 20160902152013) do
     t.index ["modifiable_type", "modifiable_id"], name: "index_stat_mods_on_modifiable_type_and_modifiable_id", using: :btree
   end
 
+  add_foreign_key "side_bag_items", "players"
 end

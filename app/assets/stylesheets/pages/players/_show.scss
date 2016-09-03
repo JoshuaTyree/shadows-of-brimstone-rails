@@ -147,6 +147,7 @@
       display: block;
       box-sizing: border-box;
       background-color: #34495e;
+      position: relative;
     }
 
     p {
@@ -156,6 +157,37 @@
 
       margin: 0;
       padding: 0;
+    }
+
+    span.time {
+      color: $clouds;
+      font-size: 1em;
+      font-family: "Rockwell Condensed";
+
+      top: 50%;
+      right: 0.5em;
+      position: absolute;
+      transform: translateY(-50%);
+    }
+
+    a.destroy {
+      color: $clouds;
+      font-size: 1em;
+
+      top: 0;
+      right: 0.5em;
+      position: absolute;
+      display: block;
+
+      i {
+        color: $clouds;
+      }
+
+      &:hover {
+        color: scale-color($clouds, $lightness: -10%);
+
+        i { color: scale-color($clouds, $lightness: -10%); }
+      }
     }
 
     &.double-wide {

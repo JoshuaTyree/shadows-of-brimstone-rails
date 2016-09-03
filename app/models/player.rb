@@ -18,6 +18,7 @@ class Player < ApplicationRecord
   has_many :abilities
   has_many :items
   has_many :stat_mods, as: :modifiable
+  has_many :side_bag_items
 
   validates :name, presence: true
   validates :xp, numericality: true
@@ -65,12 +66,19 @@ class Player < ApplicationRecord
     _audits = []
 
     associated_audits.each do |audit|
+      final = {}
+      items = audit.audited_changes.reject{|y,z| z.nil? or y == "character_id" or y == "id"}
+      items.each do |k,v|
+        tmp = k.gsub('_', ' ').titleize
+        final[tmp] = v
+      end
+
       _audits.push({
         object: audit.auditable,
         model: audit.auditable_type,
         type: audit.action,
         when: audit.created_at,
-        changed: []
+        changed: final
       })
     end
 
