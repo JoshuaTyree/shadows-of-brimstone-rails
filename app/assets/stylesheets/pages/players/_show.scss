@@ -59,6 +59,19 @@
         &.full {
           @include span(12);
           background-color: #16a085;
+
+          &.levelup {
+            background-color: #e67e22;
+
+            .button {
+
+              font-size: 3em;
+              font-family: "Rockwell Condensed";
+              margin-bottom: 0.5em;
+              padding-left: 3em;
+              padding-right: 3em;
+            }
+          }
         }
 
         &.rectangle {

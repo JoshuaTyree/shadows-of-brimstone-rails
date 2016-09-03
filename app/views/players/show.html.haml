@@ -30,6 +30,10 @@
 .players-show-container
   .player
     %ul.stats
+      - if @player.can_level_up?
+        %li.full.levelup
+          %h5 You have enough XP to level up!
+          = link_to 'Level Up', player_levelup_path(@player), class: 'button'
       %li.full
         %h4= "#{@player.name} - Lv. #{@player.level}"
         %h5= "Keywords: #{@player.character.keywords.split(',').map{|x| x.capitalize}.join(', ')}"

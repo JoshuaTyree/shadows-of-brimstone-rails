@@ -155,6 +155,7 @@ class PlayersController < ApplicationController
     @player = Player.find params[:player_id]
     unless !@player.can_level_up?
       @player.levelup!
+      flash[:notice] = "Level up complete. Congrats!"
     end
     render "show"
   end
@@ -191,7 +192,7 @@ class PlayersController < ApplicationController
   def sidebag_params
     params.require(:side_bag_item).permit(
       :player_id,
-      :name 
+      :name
     )
   end
 
