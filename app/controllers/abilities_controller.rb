@@ -1,8 +1,9 @@
 class AbilitiesController < ApplicationController
 
   def create
+    puts ability_params
     @ability = Ability.new ability_params
-    @player = ability_params[:player_id]
+    @player = Player.find ability_params[:player_id]
     if @ability.save
       redirect_to edit_player_path(@player, anchor: 'ability-form'), notice: "Successfully added ability"
     else
