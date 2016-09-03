@@ -2,11 +2,12 @@ class AbilitiesController < ApplicationController
 
   def create
     @ability = Ability.new ability_params
+    @player = ability_params[:player_id]
     if @ability.save
-      redirect_to player_path(@ability.player, anchor: 'ability-form'), notice: "Successfully added ability"
+      redirect_to edit_player_path(@player, anchor: 'ability-form'), notice: "Successfully added ability"
     else
       flash[:error] = "Failed to create ability"
-      redirect_to edit_player_path(@ability.player, anchor: 'ability-form')
+      redirect_to edit_player_path(@player, anchor: 'ability-form')
     end
   end
 
